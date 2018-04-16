@@ -1,0 +1,26 @@
+---
+title: "JHU Data Science Course 9 Project 2: plotly"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Background
+
+This is a simple web page created with RMarkdown that features a sine wave graphed using plotly.
+
+## April 16, 2018.
+
+```{r, echo=TRUE}
+suppressPackageStartupMessages( library(plotly) )
+
+x = seq(-2*pi,2*pi,.1)
+y = sin(x)
+df <- data.frame(x,y)
+plot_ly(df, x=~x, y=~y, type="scatter", mode="markers")
+```
+
